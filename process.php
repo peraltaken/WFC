@@ -53,7 +53,7 @@
             echo '<p>Please enter valid input and limit.</p>';
         } else {
             // Tokenize the input text into words
-            $words = str_word_count($inputText, 1);
+            $words = preg_split('/\W+/', $inputText, -1, PREG_SPLIT_NO_EMPTY);
 
             // Calculate word frequency
             $wordFrequency = calculateWordFrequency($words, $stopWords);
